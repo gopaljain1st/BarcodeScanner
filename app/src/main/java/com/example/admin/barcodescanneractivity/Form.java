@@ -41,15 +41,15 @@ public class Form extends AppCompatActivity
         Intent in=getIntent();
         String result=in.getStringExtra("result");
         String []arr=result.split(":|\\;");
-        for(int i=0;i<arr.length;i++)
+        if(arr.length>=14)
         {
-            Log.e("arr["+i+"]",arr[i]);
+            name.setText(arr[2]);
+            mobile.setText(arr[6]);
+            email.setText(arr[10]);
+            address.setText(arr[12]);
+            title.setText(arr[14]);
         }
-        name.setText(arr[2]);
-        mobile.setText(arr[6]);
-        email.setText(arr[10]);
-        address.setText(arr[12]);
-        title.setText(arr[14]);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
